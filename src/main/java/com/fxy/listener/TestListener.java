@@ -14,12 +14,14 @@ import java.util.function.Consumer;
 public class TestListener implements Consumer<GroupMessageEvent> {
     @Override
     public void accept(GroupMessageEvent groupMessageEvent) {
-
+// 发消息
+        
+//        groupMessageEvent.getSender().sendMessage();
         Member sender = groupMessageEvent.getSender();
-        if(sender.getId() == 352041906L){
+        if (sender.getId() == 352041906L) {
             Plugin.INSTANCE.getLogger().info("我自己说话了");
             System.out.println();
-        }else{
+        } else {
             Plugin.INSTANCE.getLogger().info("我没说话");
         }
     }
