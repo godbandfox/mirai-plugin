@@ -8,7 +8,9 @@ plugins {
 
 group = "com.fxy"
 version = "0.1"
-
+dependencies {
+    
+}
 repositories {
 
     maven("https://maven.aliyun.com/repository/public")
