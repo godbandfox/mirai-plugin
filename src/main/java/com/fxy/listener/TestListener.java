@@ -12,6 +12,10 @@ import java.util.function.Consumer;
  * @date 2022/4/9 9:49
  */
 public class TestListener implements Consumer<GroupMessageEvent> {
+
+    public static final int OWNED_ME = 352041906;
+    public static final int GROUP_YYJ = 389401003;
+
     @Override
     public void accept(GroupMessageEvent groupMessageEvent) {
         Group subject = groupMessageEvent.getSubject();
@@ -27,9 +31,9 @@ public class TestListener implements Consumer<GroupMessageEvent> {
 
         Plugin.INSTANCE.getLogger().info(subject.getOwner().getRemark().toString());
 // 发消息
-        if (subject.getId() == 389401003) {
+        if (subject.getId() == GROUP_YYJ) {
             Plugin.INSTANCE.getLogger().info("云游群发言");
-            if (352041906 == subject.getOwner().getId()) {
+            if (OWNED_ME == subject.getOwner().getId()) {
                 Plugin.INSTANCE.getLogger().info("我自己发言");
             }
         } else {
